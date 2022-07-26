@@ -5,10 +5,9 @@ import yfinance as yf
 from keras.models import load_model
 import streamlit as st
 
-st.title('Stock Trend Prediction')
-
 st.image("compunnel.png",width=100)
 
+st.title('Stock Trend Prediction')
 stocks = ('AAPL', 'MSFT', 'UNH','GOOG','AMZN') 
 
 user_input = st.selectbox('Select dataset for prediction', stocks)
