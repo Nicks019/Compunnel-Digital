@@ -80,7 +80,6 @@ scale_factor = 1/scaler[0]
 y_predicted = y_predicted * scale_factor
 y_test = y_test * scale_factor
 
-st.write(y_predicted.head())
 
 #Final Graph
 st.subheader('Prediction vs Original')
