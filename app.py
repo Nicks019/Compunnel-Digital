@@ -80,8 +80,7 @@ scale_factor = 1/scaler[0]
 y_predicted = y_predicted * scale_factor
 y_test = y_test * scale_factor
 
-y = pd.DataFrame(y_predicted)
-st.write(y)
+
 #Final Graph
 st.subheader('Prediction vs Original')
 fig2 = plt.figure(figsize=(12,6))
