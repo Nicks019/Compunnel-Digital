@@ -93,8 +93,8 @@ y_predicted = model.predict(x_test)
 #y_test = y_test * scale_factor
 
 y_test = y_test.reshape(-1,1)
-y_predicted = round(scaler.inverse_transform(y_predicted),2)
-y_test = round(scaler.inverse_transform(y_test),2)
+y_predicted = scaler.inverse_transform(y_predicted)
+y_test = scaler.inverse_transform(y_test)
 
 yp = pd.DataFrame(y_predicted,columns=(['Predicted']))
 yt = pd.DataFrame(y_test,columns=(['Actual']))
