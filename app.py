@@ -118,6 +118,16 @@ plt.ylabel('Price')
 plt.legend()
 st.pyplot(fig2)
 
+st.subheader('Metrics')
+from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
+scores = [['Mean Absolute Error', mean_absolute_error(y_test,y_predicted)], ['Mean Squared Error', mean_squared_error(y_test, y_predicted)], ['Root Mean Squared Error', np.sqrt(mean_squared_error(y_test, y_predicted))],['R2 Score', r2_score(y_test, y_predicted)]]
+scores_f = pd.DataFrame(scores, columns=['Metrics', 'Scores'])
+st.write(scores_f)
+
+
+
+
+
 
 
 
