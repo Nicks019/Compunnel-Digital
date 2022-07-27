@@ -97,7 +97,7 @@ y_test = scaler.inverse_transform(y_test)
 yp = pd.DataFrame(y_predicted,columns=(['Predicted']))
 yt = pd.DataFrame(y_test,columns=(['Actual']))
 y = pd.concat([yt,yp],axis = 1)
-dd = data.DataReader('AAPL','yahoo',start)
+dd = yf.download(user_input,period = '5y')
 dd = dd[-421:]
 y = y.set_index(dd.index)
 
