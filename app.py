@@ -98,7 +98,7 @@ yp = pd.DataFrame(y_predicted,columns=(['Predicted']))
 yt = pd.DataFrame(y_test,columns=(['Actual']))
 y = pd.concat([yt,yp],axis = 1)
 dd = yf.download(user_input,period = '5y')
-dd = dd[-421:]
+dd = dd[-378:]
 d1 = dd.index
 y1 = y.set_index(d1)
 
