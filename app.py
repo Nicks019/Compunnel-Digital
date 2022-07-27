@@ -101,7 +101,7 @@ yp = pd.DataFrame(y_predicted,columns=(['Predicted']))
 yt = pd.DataFrame(y_test,columns=(['Actual']))
 y = pd.concat([yt,yp],axis = 1)
 dd = data.DataReader('AAPL','yahoo',start)
-dd = dd[-378:]
+dd = dd[-421:]
 d1 = dd.index
 y1 = y.set_index(d1)
 
