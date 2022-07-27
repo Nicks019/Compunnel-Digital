@@ -104,7 +104,7 @@ st.subheader('Actual Vs Predicted Prices')
 st.write(y.head(5))
 
 #Final Graph
-st.subheader('Prediction vs Original')
+st.subheader('Actual Vs Predicted Chart')
 fig2 = plt.figure(figsize=(12,6))
 plt.plot(y_test, 'b', label = 'Original Price')
 plt.plot(y_predicted, 'r', label = 'Predicted Price')
