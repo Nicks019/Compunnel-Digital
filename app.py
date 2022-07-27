@@ -104,9 +104,9 @@ dd = data.DataReader('AAPL','yahoo',start)
 dd = dd[-421:]
 d1 = dd.index
 y1 = y.set_index(d1)
-
+y2 = y1.reset_index()
 st.subheader('Actual Vs Predicted Prices')
-st.write(y1.tail(5))
+st.write(y2.tail(5))
 
 #Final Graph
 st.subheader('Actual Vs Predicted Chart')
