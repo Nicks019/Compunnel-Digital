@@ -75,12 +75,21 @@ x_test , y_test = np.array(x_test), np.array(y_test)
 #Making Predictions
 
 y_predicted = model.predict(x_test)
-scaler = scaler.scale_
 
-scale_factor = 1/scaler[0]
-y_predicted = y_predicted * scale_factor
-y_test = y_test * scale_factor
+#scaler = scaler.scale_
 
+#scale_factor = 1/scaler[0]
+#y_predicted = y_predicted * scale_factor
+#y_test = y_test * scale_factor
+
+y_test = y_test.reshape(-1,1)
+y_predicted = scaler.inverse_transform(y_predicted)
+y_test = scaler.inverse_transform(y_test)
+
+yp = pd.DataFrame(y_predicted,columns=(['Predicted']))
+yt = pd.DataFrame(y_test,columns=(['Actual']))
+y = pd.concat([yt,yp],axis = 1)
+st.write(y)
 
 #Final Graph
 st.subheader('Prediction vs Original')
