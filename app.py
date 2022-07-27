@@ -100,13 +100,12 @@ y_test = scaler.inverse_transform(y_test)
 yp = pd.DataFrame(y_predicted,columns=(['Predicted']))
 yt = pd.DataFrame(y_test,columns=(['Actual']))
 y = pd.concat([yt,yp],axis = 1)
-dd = data.DataReader('AAPL','yahoo',start)
+dd = data.DataReader(user_input,'yahoo',start)
 dd = dd[-421:]
 d1 = dd.index
 y1 = y.set_index(d1)
-y2 = y1.reset_index()
 st.subheader('Actual Vs Predicted Prices')
-st.write(y2.tail(5))
+st.write(y1.tail(5))
 
 #Final Graph
 st.subheader('Actual Vs Predicted Chart')
