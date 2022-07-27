@@ -99,10 +99,10 @@ yt = pd.DataFrame(y_test,columns=(['Actual']))
 y = pd.concat([yt,yp],axis = 1)
 dd = yf.download(user_input,period = '5y')
 dd = dd[-421:]
-y = y.set_index(dd.index)
+y1 = y.set_index(dd.index)
 
 st.subheader('Actual Vs Predicted Prices')
-st.write(y.tail(5))
+st.write(y1.tail(5))
 
 #Final Graph
 st.subheader('Actual Vs Predicted Chart')
