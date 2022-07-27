@@ -14,8 +14,6 @@ stocks = ('AAPL', 'MSFT', 'UNH','GOOG','AMZN')
 user_input = st.selectbox('Select dataset for prediction', stocks)
 
 
-
-
 df = yf.download(user_input,period = '5y')
 
 #Describing Data
@@ -101,7 +99,7 @@ yt = pd.DataFrame(y_test,columns=(['Actual']))
 y = pd.concat([yt,yp],axis = 1)
 
 st.subheader('Actual Vs Predicted Prices')
-st.write(y.head(5))
+st.write(y.tail(5))
 
 #Final Graph
 st.subheader('Actual Vs Predicted Chart')
