@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import yfinance as yf
 from keras.models import load_model
 import streamlit as st
+import pandas_datareader as data
 
 st.set_page_config(page_title = "Compunnel digital")
 st.image("compunnel.png",width=100)
@@ -14,7 +15,9 @@ stocks = ('AAPL', 'MSFT', 'UNH','GOOG','AMZN')
 user_input = st.selectbox('Select dataset for prediction', stocks)
 
 
-df = yf.download(tickers= user_input, period = '5y', interval = '1d')
+start = '2017-01-01'
+
+df = data.DataReader(user_input,'yahoo',start)
 
 #Describing Data
 
@@ -97,7 +100,7 @@ y_test = scaler.inverse_transform(y_test)
 yp = pd.DataFrame(y_predicted,columns=(['Predicted']))
 yt = pd.DataFrame(y_test,columns=(['Actual']))
 y = pd.concat([yt,yp],axis = 1)
-dd = yf.download(tickers= user_input, period = '5y', interval = '1d')
+dd = data.DataReader('AAPL','yahoo',start)
 dd = dd[-378:]
 d1 = dd.index
 y1 = y.set_index(d1)
