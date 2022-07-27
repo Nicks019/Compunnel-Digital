@@ -103,7 +103,8 @@ y = pd.concat([yt,yp],axis = 1)
 dd = data.DataReader(user_input,'yahoo',start)
 dd = dd[-421:]
 d1 = dd.index
-y1 = y.set_index(d1)
+d2 = d1.split('T')
+y1 = y.set_index(d2[0])
 st.subheader('Actual Vs Predicted Prices')
 st.write(y1.tail(5))
 
