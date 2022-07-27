@@ -97,6 +97,9 @@ y_test = scaler.inverse_transform(y_test)
 yp = pd.DataFrame(y_predicted,columns=(['Predicted']))
 yt = pd.DataFrame(y_test,columns=(['Actual']))
 y = pd.concat([yt,yp],axis = 1)
+dd = data.DataReader('AAPL','yahoo',start)
+dd = dd[-421:]
+y = y.set_index(dd.index)
 
 st.subheader('Actual Vs Predicted Prices')
 st.write(y.tail(5))
