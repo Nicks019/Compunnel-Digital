@@ -56,7 +56,7 @@ data_training_array = scaler.fit_transform(data_training)
 
 #Load Model
 
-model = load_model('keras_model.h5')
+model = load_model('keras_model (1).h5')
 
 #Testing Part
 
